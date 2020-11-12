@@ -23,9 +23,20 @@ virtualenv --no-site-packages venv
 ```
 
 ## Creating a Starter React Project
+https://app.serverless.com/?package=react-starter
 ```commandline
-npx create-react-app react-flask-app
-cd react-flask-app
-```
+npx create-react-app react-app
+cd react-app
+``` 
 
-npx create-react-app react-flask-app
+- install  
+`npm i -g serverless && serverless init sf_PFGJ0TvF`
+- run  
+```commandline
+cd react-app
+npm start
+```
+- build  
+`npm run build`
+- deploy  
+`cd react-app && serverless deploy`
