@@ -1,0 +1,10 @@
+flask
+flask_bcrypt
+flask_login
+flask_sqlalchemy
+flask_marshmallow
+flask_migrate
+flask_wtf
+wtforms
+Pillow
+python-dotenv
