@@ -1,11 +1,11 @@
 from flask import (
     Blueprint, flash, redirect, render_template, request, url_for, jsonify, make_response
 )
-from platform.auth import login_required
 from flask_login import current_user
+from .auth import login_required
 from .forms import PostEditForm
 from .models import Post
-from platform import db, login_manager
+from edu_platform import db, login_manager
 import json
 # to save img file
 import uuid
@@ -23,7 +23,8 @@ login_manager.login_view = "login"
 @login_required
 def get_posts():
     posts = Post.query.all()
-    return render_template('post/index.html', posts=posts)
+    return {'posts': posts}
+    # return render_template('post/index.html', posts=posts)
 
 
 @bp.route('/posts', methods=['POST'])

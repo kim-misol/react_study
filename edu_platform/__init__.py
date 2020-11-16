@@ -40,7 +40,7 @@ def create_app(config='DevelopmentConfig'):
     # post blueprint
     from . import post
     app.register_blueprint(post.bp)
-    app.add_url_rule('/', endpoint='index')
+    # app.add_url_rule('/', endpoint='index')
 
     # auth blueprint
     from . import auth

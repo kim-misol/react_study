@@ -5,8 +5,8 @@ from flask import (
 )
 from flask_login import current_user, login_user
 from .forms import LoginForm, SignUpForm
-from platform.models import User
-from platform import db, login_manager
+from .models import User
+from edu_platform import db, login_manager
 from datetime import datetime
 
 bp = Blueprint('auth', __name__, url_prefix='/')

@@ -29,7 +29,7 @@ virtualenv --no-site-packages venv
 
 - Run  
     ```commandline
-    cd platform 
+    cd edu_platform 
     yarn start
     ```
 
@@ -104,6 +104,6 @@ Flask large application directory structure:
     
 ## Installation
 ```
-cd platform
+cd edu_platform
 npm install react-router-dom --save
 ```

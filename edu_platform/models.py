@@ -1,4 +1,4 @@
-from platform import db, bcrypt
+from edu_platform import db, bcrypt
 from sqlalchemy import Column, Integer, Text, DateTime, ForeignKey, String, JSON
 from flask_login import UserMixin
 from sqlalchemy.orm import synonym

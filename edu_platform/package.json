@@ -1,5 +1,5 @@
 {
-  "name": "platform",
+  "name": "edu_platform",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -14,6 +14,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start-api": "cd api && venv/Script/flask run --no-debugger",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
