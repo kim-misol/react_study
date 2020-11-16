@@ -1,5 +1,8 @@
 # React + Flask Project
-create a project that combines a React frontend with a Flask backend
+## Introduction  
+Create a project that combines a React frontend with a Flask backend  
+- Flask is great for quickly building server side application.  
+- React is great for quickly building responsive user interfaces.  
 
 ## Requirements
 
@@ -23,20 +26,84 @@ virtualenv --no-site-packages venv
 ```
 
 ## Creating a Starter React Project
-https://app.serverless.com/?package=react-starter
-```commandline
-npx create-react-app react-app
-cd react-app
-``` 
 
-- install  
-`npm i -g serverless && serverless init sf_PFGJ0TvF`
-- run  
-```commandline
-cd react-app
-npm start
+- Run  
+    ```commandline
+    cd platform 
+    yarn start
+    ```
+
+- Build  
+`yarn build`
+
+- Deploy  
+`cd platform && serverless deploy`
+
+## Project structure
+Flask large application directory structure:
 ```
-- build  
-`npm run build`
-- deploy  
-`cd react-app && serverless deploy`
+|   config.py
+|   microblog.py
+|
++---app
+    |   cli.py
+    |   models.py
+    |   __init__.py
+    |
+    +---api_1_0
+    |       routes.py
+    |       __init__.py
+    |
+    +---main
+    |       forms.py
+    |       routes.py
+    |       __init__.py
+    |
+    +---static
+    |       │   package-lock.json
+    |       │   package.json
+    |       │   webpack.config.js
+    |       │
+    |       ├───css
+    |       │       style.css
+    |       │
+    |       ├───dist
+    |       │       bundle.js
+    |       │
+    |       └───scripts
+    |               index.js
+    |               Finance.js
+    |               HelloWorld.js
+    |
+    +---templates
+        |   base.html
+        |   index.html
+        |   user.html
+        |
+        \---errors
+             404.html
+             500.html
+```
+
+## Flask
+- Run server side scripts and applications.  
+- Deliver generic HTML sections such as headers / footers / nav bar.
+- Deliver raw JSON data via API endpoints.
+    - Make database connections and requests.
+    - Data processing / computation and packing data.
+    
+## React
+- React can build responsive, stateful components.
+    - Any component that needs memory, (remembering viewport height / width for example).
+    - Show / hide / update a div, or HTML section.
+- Build a responsive user interface.
+    - Anything that changes or updates with user input
+    - Handle onClick functions.
+    - Extensive compatible library selection, such as drag and drop tools.
+    
+    
+## Installation
+```
+cd platform
+npm install react-router-dom --save
+```
