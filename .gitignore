@@ -1,4 +1,8 @@
+# misc
 .DS_Store
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 .env
 .flaskenv
 *.pyc
@@ -6,7 +10,8 @@
 env/
 env*
 dist/
-build/
+# production
+/build
 *.egg
 *.egg-info/
 _mailinglist
@@ -28,3 +33,10 @@ instance/
 venv/
 uploads/
 test.py
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+# testing
+/coverage
