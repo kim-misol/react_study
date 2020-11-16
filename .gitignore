@@ -11,7 +11,7 @@ env/
 env*
 dist/
 # production
-/build
+build/
 *.egg
 *.egg-info/
 _mailinglist
@@ -35,8 +35,8 @@ uploads/
 test.py
 
 # dependencies
-/node_modules
+node_modules/
 /.pnp
 .pnp.js
 # testing
-/coverage
+coverage/
