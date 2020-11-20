@@ -22,8 +22,14 @@ login_manager.login_view = "login"
 @bp.route('/posts', methods=['GET'])
 @login_required
 def get_posts():
-    posts = Post.query.all()
-    return {'posts': posts}
+    result = {'posts': []}
+    for p in Post.query.all():
+        result['posts'].append({
+            'id': p.id,
+            'content': p.content,
+            'title': p.title
+        })
+    return result
     # return render_template('post/index.html', posts=posts)
 
 

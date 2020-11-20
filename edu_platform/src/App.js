@@ -5,12 +5,12 @@ import Home from "./routes/Home";
 import Post from "./routes/Post";
 
 function App() {
-  return (
-    <HashRouter>
-      <Route path="/" exact={true} component={Home} />
-      <Route path="/posts" component={Post} />
-    </HashRouter>
-  );
+    return (
+        <HashRouter>
+          <Route path="/" exact={true} component={Home} />
+          <Route path="/posts" component={Post} />
+        </HashRouter>
+    );
 }
 
 export default App;

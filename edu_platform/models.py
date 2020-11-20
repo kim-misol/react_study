@@ -1,7 +1,7 @@
 from edu_platform import db, bcrypt
 from sqlalchemy import Column, Integer, Text, DateTime, ForeignKey, String, JSON
 from flask_login import UserMixin
-from sqlalchemy.orm import synonym
+from sqlalchemy.orm import synonym, relationship
 from sqlalchemy.ext.hybrid import hybrid_property
 import click
 from flask.cli import with_appcontext
@@ -16,6 +16,7 @@ class User(db.Model, UserMixin):
     email = Column(Text, nullable=False, index=True)
     created_at = Column(DateTime(timezone=True))
     createdAt = synonym('created_at')
+    posts = relationship("Post", back_populates="user")
 
     @hybrid_property
     def password(self):
@@ -38,11 +39,12 @@ class Post(db.Model):
     attachment = Column(Text)
     save_type = Column(Text)
     created_at = Column(DateTime(timezone=True))
-    createdAt = synonym('created_at')
     modified_at = Column(DateTime(timezone=True))
-    modifiedAt = synonym('modified_at')
     user_id = Column(Integer, ForeignKey('users.id'), index=True)
-    userId = synonym('user_id')
+    user = relationship("User", back_populates="posts")
+
+    def __repr__(self):
+        return f'<Post {self.id}>'
 
 
 def create():
